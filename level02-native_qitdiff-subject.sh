@@ -3,9 +3,8 @@
 # scripts includes:
 # 	- run qitdiff on every subject 
 
-# Zhuocheng Li - zhuocheng.li@loni.usc.edu
-# INI Microstructural imaging Group (IMG)
 # Quantitative Imaging Team (QI-Team)
+# INI Microstructural imaging Group (IMG)
 # Steven Neuroimaging and Informatic Institute 
 # Keck school of medicine of USC
 #############################################################
@@ -15,10 +14,4 @@
 
 cd ${1}
 cd ${2}
-qitdiff \
-  --motion \
-  --subject qitout \
-  --dwi ./dmri/dwi.nii.gz \
-  --bvecs ./dmri/dwi.bvec \
-  --bvals ./dmri/dwi.bval \
-  ./diff.regions/jhu.labels.dti.map
+qitdiff --motion --subject qitout --dwi ./dmri/dwi.nii.gz --bvecs ./dmri/dwi.bvec --bvals ./dmri/dwi.bval ./diff.regions/jhu.labels.dti.map
