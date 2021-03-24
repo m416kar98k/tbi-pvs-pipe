@@ -3,8 +3,8 @@
 # scripts includes:
 # 	- dcm to nifti 
 
-# INI Microstructural imaging Group (IMG)
 # Quantitative Imaging Team (QI-Team)
+# INI Microstructural imaging Group (IMG)
 # Steven Neuroimaging and Informatic Institute 
 # Keck school of medicine of USC
 #############################################################
