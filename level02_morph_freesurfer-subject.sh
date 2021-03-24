@@ -1,4 +1,5 @@
 # recall var1 is the analysis absolute path
+# recall var2 is the formatted subject name
 cd ${1}
 unset SUBJECTS_DIR
 SUBJECTS_DIR="${2}/smri"
