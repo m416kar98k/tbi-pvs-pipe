@@ -1,3 +1,15 @@
+#############################################################
+# Level 3 result to table
+# scripts includes:
+# 	- fsout to csv
+
+# Zhuocheng Li - zhuocheng.li@loni.usc.edu
+# INI Microstructural imaging Group (IMG)
+# Quantitative Imaging Team (QI-Team)
+# Steven Neuroimaging and Informatic Institute 
+# Keck school of medicine of USC
+#############################################################
+
 # recall var1 is the  analysis absolute path
 # recall var2 is the stat absolute path
 cd ${1}
