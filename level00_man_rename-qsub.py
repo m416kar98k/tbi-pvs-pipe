@@ -49,5 +49,10 @@ for i in range(len(subj_date_list)):
 for i in zip_list:
 	if i in imag_to_subj:
 		# omit missed data
-		cmd = "qsubcmd bash ./level00_man-subject.sh " + analysisF + " " + zip_path + "/" + i + " " + imag_to_subj[i] + " " + modality + " " + modality_type
+		var1 = analysisF
+		var2 = imag_to_subj[i]
+		var3 = zip_path + "/" + i
+		var4 = modality
+		var5 = modality_type
+		cmd = "qsubcmd bash ./level00_man-subject.sh " + var1 + " " + var2 + " " + var3 + " " + var4 + " " + var5
 		os.system(cmd)
