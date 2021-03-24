@@ -1,5 +1,16 @@
+#############################################################
+# Level 5 segmentation analysis
+# scripts includes:
+# 	- gather global measures from ANTs 
 
+# Quantitative Imaging Team (QI-Team)
+# INI Microstructural imaging Group (IMG)
+# Steven Neuroimaging and Informatic Institute 
+# Keck school of medicine of USC
+#############################################################
 
+# recall var1 is the analysis absolute path
+# recall var2 is the statistics absolute path
 cd ${1}
 
 echo "Subject,BVol,GVol,WVol,ThicknessSum" > ${2}/ants.all.csv
