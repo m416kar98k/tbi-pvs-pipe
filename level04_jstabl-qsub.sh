@@ -9,6 +9,7 @@
 # Keck school of medicine of USC
 #############################################################
 
+# recall var1 is the  analysis absolute path
 cd ${1}
 
 for i in *
