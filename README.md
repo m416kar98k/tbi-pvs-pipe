@@ -21,9 +21,4 @@ The contents include how to preprocess data from compressed dicom scans and csv 
 - Select ANALYSIS_FOLDER and STATISTICS_FOLDER
 - The outcome for each subject in ANALYSIS_FOLDER will be listed like:
 -   - ADNIDOD_1234567890_20210323_v1
--       - smri
--       - dmri
--       - fsout
--       - qitout
--       - pvs [NOT INCLUDED IN THE REPO BECAUSE THE ALGORITHM IS NOT OPEN-SOURCED YET]
--       - seg [NOT INTRODUCED NOW, BUT WILL BE INTRODUCED IN THE FUTURE]
+-   - contains dmri, fsout, qitout, smri
