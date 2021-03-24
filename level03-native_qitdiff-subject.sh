@@ -1,3 +1,6 @@
+# recall var1 is the analysis absolute path
+# recall var2 is the formatted subject name
+
 cd ${1}
 cd ${2}
 
