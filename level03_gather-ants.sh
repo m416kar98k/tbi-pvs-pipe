@@ -1,5 +1,5 @@
 #############################################################
-# Level 5 segmentation analysis
+# Level 3 segmentation analysis
 # scripts includes:
 # 	- gather global measures from ANTs 
 
