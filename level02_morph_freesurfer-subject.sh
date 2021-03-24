@@ -1,3 +1,4 @@
+# recall var1 is the analysis absolute path
 cd ${1}
 unset SUBJECTS_DIR
 SUBJECTS_DIR="${2}/smri"
