@@ -3,9 +3,8 @@
 # scripts includes:
 # 	- volume standardize 
 
-# Zhuocheng Li - zhuocheng.li@loni.usc.edu
-# INI Microstructural imaging Group (IMG)
 # Quantitative Imaging Team (QI-Team)
+# INI Microstructural imaging Group (IMG)
 # Steven Neuroimaging and Informatic Institute 
 # Keck school of medicine of USC
 #############################################################
