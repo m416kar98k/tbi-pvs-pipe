@@ -1,5 +1,5 @@
 #############################################################
-# Level 4 segmentation thickness
+# Level 2 segmentation thickness
 # scripts includes:
 # 	- gray matter 
 
