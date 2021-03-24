@@ -1,5 +1,5 @@
 # recall var1 is the analysis absolute path
-cd ${var1}
+cd ${1}
 for i in *
 do 
 	if [ ! -f $i/smri/t1w.orig.nii.gz ];then
