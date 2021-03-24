@@ -31,7 +31,7 @@ zip_path = input("Raw scan directory: ")
 zip_list = os.listdir(zip_path)
 
 # output
-analysisF = input("Output directory: ")
+analysisF = input("Analysis directory: ")
 
 # create a dictionary for converting image filename to subjectID and date/visit
 subj_list = []
