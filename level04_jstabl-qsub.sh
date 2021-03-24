@@ -1,3 +1,14 @@
+#############################################################
+# Level 4 tumor detection
+# scripts includes:
+# 	- white matter
+
+# Quantitative Imaging Team (QI-Team)
+# INI Microstructural imaging Group (IMG)
+# Steven Neuroimaging and Informatic Institute 
+# Keck school of medicine of USC
+#############################################################
+
 cd ${1}
 
 for i in *
