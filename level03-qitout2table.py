@@ -30,4 +30,4 @@ for i in subj_list:
 			column_values += list(temp)
 		df2.append(column_values)
 
-pd.DataFrame(df2, columns = ["Subject"] + column_names).to_csv(statF + "/" + "qitout.csv")
+pd.DataFrame(df2, columns = ["Subject"] + column_names).to_csv(statF + "/" + "qitout.all.csv")
