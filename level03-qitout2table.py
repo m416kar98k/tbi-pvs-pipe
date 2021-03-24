@@ -24,9 +24,10 @@ for i in subj_list:
 	csv_path = analysisF + "/" + i + "/" + "qitout" + "/" + "diff.regions" + "/" + "jhu.labels.dti.map"
 	if os.path.isdir(csv_path):
 		column_names = []
+		column_values = [i]
 		for j in os.listdir(csv_path):
 			temp = pd.read_csv(csv_path + "/" + j)
 			column_names += [j.replace(".csv", "") + "_" + k for k in temp["name"]]
-			df2.append([i] + list(temp["value"]))
+			column_values += list(temp)
 
 pd.DataFrame(df2, columns = ["Subject"] + column_names).to_csv(statF + "/" + "qitout.csv")
