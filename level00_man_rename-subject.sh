@@ -1,3 +1,15 @@
+#############################################################
+# Level 0 rename
+# scripts includes:
+# 	- dcm to nifti 
+
+# Zhuocheng Li - zhuocheng.li@loni.usc.edu
+# INI Microstructural imaging Group (IMG)
+# Quantitative Imaging Team (QI-Team)
+# Steven Neuroimaging and Informatic Institute 
+# Keck school of medicine of USC
+#############################################################
+
 # recall var1 is the analysis absolute path
 # recall var2 is the formatted subject name
 # recall var3 is the zip absolute path
