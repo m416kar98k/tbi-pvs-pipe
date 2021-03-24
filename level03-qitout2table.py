@@ -29,5 +29,6 @@ for i in subj_list:
 			temp = pd.read_csv(csv_path + "/" + j)
 			column_names += [j.replace(".csv", "") + "_" + k for k in temp["name"]]
 			column_values += list(temp)
+		df2.append(column_values)
 
 pd.DataFrame(df2, columns = ["Subject"] + column_names).to_csv(statF + "/" + "qitout.csv")
