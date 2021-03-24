@@ -19,9 +19,3 @@ The contents include how to preprocess data from compressed dicom scans and csv 
 - For every level, must run the previous levels to continue on the next level.
 - Select CSV_FOLDER and ZIP_FOLDER for demographic summary and compressed scanning
 - Select ANALYSIS_FOLDER and STATISTICS_FOLDER
-- The outcome for each subject in ANALYSIS_FOLDER will be listed like:
--   - ADNIDOD_1234567890_20210323_v1
--   -   - dmri
--   -   - fsout
--   -   - qitout
--   -   - smri
