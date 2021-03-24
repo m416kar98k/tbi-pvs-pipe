@@ -1,3 +1,15 @@
+#############################################################
+# Level 4 segmentation thickness
+# scripts includes:
+# 	- gray matter 
+
+# Quantitative Imaging Team (QI-Team)
+# INI Microstructural imaging Group (IMG)
+# Steven Neuroimaging and Informatic Institute 
+# Keck school of medicine of USC
+#############################################################
+
+# recall var1 is the analysis absolute path
 cd ${1}
 
 atlasF="/usr/local/NeuroBattery/data/template/PTBP"
