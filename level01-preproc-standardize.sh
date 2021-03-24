@@ -1,5 +1,6 @@
 # recall var1 is the analysis absolute path
-for i in ${var1}/*
+cd ${var1}
+for i in *
 do 
 	if [ ! -f $i/smri/t1w.orig.nii.gz ];then
     		# backup the scans
