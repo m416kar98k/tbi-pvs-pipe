@@ -3,7 +3,6 @@
 # scripts includes:
 # 	- dcm to nifti 
 
-# Zhuocheng Li - zhuocheng.li@loni.usc.edu
 # INI Microstructural imaging Group (IMG)
 # Quantitative Imaging Team (QI-Team)
 # Steven Neuroimaging and Informatic Institute 
