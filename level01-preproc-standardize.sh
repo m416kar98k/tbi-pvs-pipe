@@ -1,4 +1,4 @@
-# run the var1 is the analysis absolute path
+# recall var1 is the analysis absolute path
 for i in ${var1}/*
 do 
 	if [ ! -f $i/smri/t1w.orig.nii.gz ];then
