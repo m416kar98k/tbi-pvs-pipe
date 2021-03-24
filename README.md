@@ -7,7 +7,7 @@ The contents include how to preprocess data from compressed dicom scans and csv 
 
 ## What is New
 - Now the pipeline is portable for all directories, and all absolute path requirement has been removed
-- QIT and NiftyTorch is introduced, and more flexible algorithms for analyzing
+- QIT and NiftyTorch are introduced for more flexible algorithms
 
 ## Installation Requirement
 - Python with scientific environment (pandas and pytorch required)
