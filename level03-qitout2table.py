@@ -20,7 +20,7 @@ df2 = []
 
 subj_list = os.listdir(analysisF)
 for i in subj_list:
-	csv_path = analysisF + "/" + i + "/" + "qitout" + "/" + "diff.regions" + "/" + "jhu.labels.dti.map"
+	csv_path = analysisF + "/" + i + "/" + "qitout" + "/" + "diff.region" + "/" + "jhu.labels.dti.map"
 	if os.path.isdir(csv_path):
 		column_names = []
 		column_values = [i]
