@@ -10,8 +10,7 @@
 #############################################################
 
 # recall var1 is the analysis absolute path
-cd ${1}
-for i in *
+for i in ${1}/*
 do
   qsubcmd --qbigmem bash ./level02_native_qitdiff-subject.sh ${1} ${i}
 done
