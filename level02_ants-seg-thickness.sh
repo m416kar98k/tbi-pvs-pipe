@@ -10,11 +10,10 @@
 #############################################################
 
 # recall var1 is the analysis absolute path
-cd ${1}
 
 atlasF="/usr/local/NeuroBattery/data/template/PTBP"
 
-for i in *
+for i in ${1}/*
 do
 	mkdir -p ${i}/ants
 	qsubcmd sh antsCorticalThickness.sh -d 3 \
