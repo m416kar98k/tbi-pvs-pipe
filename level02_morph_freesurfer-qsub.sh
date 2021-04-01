@@ -10,10 +10,9 @@
 #############################################################
 
 # recall var1 is the analysis absolute path
-cd ${1}
-for i in *
+for i in ${1}/*
 do
-	if [ ! -f "${data_folder}/${subName}/fsout/stats/aseg.stats" ]; then
+	if [ ! -f "${i}/fsout/stats/aseg.stats" ]; then
   		qsubcmd bash ./level02_morph_freesurfer-subject.sh ${1} ${i}
 	fi
 done
