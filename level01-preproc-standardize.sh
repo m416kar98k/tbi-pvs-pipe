@@ -11,8 +11,7 @@
 
 # recall var1 is the analysis absolute path
 cd ${1}
-for i in *
-do 
+for i in *; do 
 	if [ ! -f $i/smri/t1w.orig.nii.gz ];then
     		# backup the scans
 		qsubcmd mv ${i}/smri/t1w.nii.gz ${i}/smri/t1w.orig.nii.gz
