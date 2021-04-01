@@ -10,8 +10,7 @@
 #############################################################
 
 # recall var1 is the analysis absolute path
-cd ${1}
-for i in *
+for i in ${1}/*
 do
 	# backup the scans
 	qsubcmd mv ${i}/smri/t1w.nii.gz ${i}/smri/t1w.orig.nii.gz
