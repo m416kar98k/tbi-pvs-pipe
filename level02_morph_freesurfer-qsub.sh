@@ -12,7 +12,7 @@
 # recall var1 is the analysis absolute path
 for i in ${1}/*
 do
-	if [ ! -f "${i}/fsout/stats/aseg.stats" ]; then
-  		qsubcmd bash ./level02_morph_freesurfer-subject.sh ${1} ${i}
+	if [ ! -d "${i}/fsout" ]; then
+  		qsubcmd bash ./level02_morph_freesurfer-subject.sh ${i}
 	fi
 done
