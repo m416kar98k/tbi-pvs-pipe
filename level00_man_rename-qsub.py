@@ -49,7 +49,6 @@ for i in csv_list:
 	imag_list += list(df["Image Information.ImgFile"])
 
 subj_list = list(map(lambda x: x.replace("TBI_",""), subj_list))
-
 date_list = list(map(lambda x: x.replace("-",""), date_list))
 imag_list = list(map(lambda x: x.split("\\")[-1], imag_list))
 subj_date_list = [cohort_name + "_" + i + "_" + j if isinstance(i, str) and isinstance(j, str) else None for (i,j) in zip(subj_list, date_list)]
