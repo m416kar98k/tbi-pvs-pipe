@@ -10,7 +10,8 @@
 #############################################################
 
 # recall var1 is the analysis absolute path
-for i in ${1}/*
-do
-  qsubcmd --qbigmem bash ./level02_native_qitdiff-subject.sh ${1} ${i}
+for i in ${1}/*; do
+  if [ ! -d "${i}/fsout" ]; then
+    qsubcmd --qbigmem bash ./level02_native_qitdiff-subject.sh ${i}
+  fi
 done
