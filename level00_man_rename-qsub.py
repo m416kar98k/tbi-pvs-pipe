@@ -14,8 +14,7 @@ import pandas as pd
 
 # cohort name
 cohort_name = input("Cohort name: ")
-while modality not in ("t1w", "t2w", "flair", "dwi"):
-	modality = input("Modality name: ")
+modality = input("Modality name: ")
 if modality in ("t1w", "t2w", "flair"):
 	modality_type =  "smri"
 elif modality in ("dwi"):
