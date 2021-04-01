@@ -18,3 +18,15 @@ The contents include how to preprocess data from compressed dicom scans and csv 
 - For every level, must run the previous levels to continue on the next level.
 - Select CSV_FOLDER and ZIP_FOLDER for demographic summary and compressed scanning
 - Select ANALYSIS_FOLDER and STATISTICS_FOLDER
+
+If you are preprocessing structural data:
+1. run level00_man_rename-qsub.py
+2. run level01_preproc-standardize.sh
+3. run level02_morph_freesurfer-qsub.sh
+4. run level03_fsout2table.sh
+
+If you are preprocessing diffusion data:
+1. run level00_man_rename-qsub.py
+2. run level01_preproc-standardize.sh
+3. run level02_native_qitdiff-qsub.sh
+4. run level03_qitout2table.py
