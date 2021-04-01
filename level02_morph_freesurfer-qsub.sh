@@ -10,8 +10,7 @@
 #############################################################
 
 # recall var1 is the analysis absolute path
-for i in ${1}/*
-do
+for i in ${1}/*; do
 	if [ ! -d "${i}/fsout" ]; then
   		qsubcmd bash ./level02_morph_freesurfer-subject.sh ${i}
 	fi
