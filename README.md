@@ -20,10 +20,10 @@ The contents include how to preprocess data from compressed dicom scans and csv 
 - Put your compressed scanning in ROOT_FOLDER/zip
 
 If you are preprocessing structural data:
-1. run level00_man_rename-qsub.py
-2. run level01_preproc-standardize.sh
-3. run level02_morph_freesurfer-qsub.sh
-4. run level03_fsout2table.sh
+- run ```python level00_man_rename-qsub.py``` and fill your options
+- run ```bash level01_preproc-standardize.sh ${ROOT_FOLDER}/analysis```
+- run ```bash level02_morph_freesurfer-qsub.sh ${ROOT_FOLDER}/analysis```
+- run ```bash level03_fsout2table.sh ${ROOT_FOLDER}/analysis```
 
 If you are preprocessing diffusion data:
 1. run level00_man_rename-qsub.py
