@@ -14,7 +14,7 @@ for i in ${1}/*
 do	
   # standardize the scans
 	qsubcmd qit VolumeStandardize --input ${i}/smri/t1w.orig.nii.gz --output ${i}/smri/t1w.nii.gz
-  qsubcmd qit VolumeStandardize --input ${i}/smri/t2w.orig.nii.gz --output ${i}/smri/t2w.nii.gz
+	qsubcmd qit VolumeStandardize --input ${i}/smri/t2w.orig.nii.gz --output ${i}/smri/t2w.nii.gz
 	qsubcmd qit VolumeStandardize --input ${i}/smri/flair.orig.nii.gz --output ${i}/smri/flair.nii.gz
 	qsubcmd qit VolumeStandardize --input ${i}/dmri/dwi.orig.nii.gz --output ${i}/dmri/dwi.nii.gz --xfm ${i}/dmri/dwi.xfm.txt
 	qsubcmd qit GradientsTransform --flip x --input ${i}/dmri/dwi.orig.bvec --output ${i}/dmri/dwi.bvec
