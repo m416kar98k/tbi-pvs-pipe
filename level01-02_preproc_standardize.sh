@@ -12,7 +12,7 @@
 # recall var1 is the analysis absolute path
 for i in ${1}/*
 do	
-  # standardize the scans
+  	# standardize the scans
 	qsubcmd qit VolumeStandardize --input ${i}/smri/t1w.orig.nii.gz --output ${i}/smri/t1w.nii.gz
 	qsubcmd qit VolumeStandardize --input ${i}/smri/t2w.orig.nii.gz --output ${i}/smri/t2w.nii.gz
 	qsubcmd qit VolumeStandardize --input ${i}/smri/flair.orig.nii.gz --output ${i}/smri/flair.nii.gz
