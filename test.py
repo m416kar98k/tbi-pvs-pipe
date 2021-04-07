@@ -109,24 +109,14 @@ discriminator_optimizer = tf.keras.optimizers.Adam(lr=0.00001, beta_1=0.9, beta_
 total_optimizer = tf.keras.optimizers.Adam(lr=0.00001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
 global_image = None
 def train_step(image_batch, label_batch):
-	noise =
-	print(noise)
 	noise = tf.cos(4*noise)
-	with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape,tf.GradientTape() as total_tape:
-		print("ALOTLAOTLAOTLAOT")
+	with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape,tf.GradientTape() as total_tape:	
 		gen_image = generator(noise, training=True)
-		print(gen_image)
-		print("BALOTLAOTLAOTLAOT")
 		real_output = discriminator(image_batch, training=True)
-		print("CALOTLAOTLAOTLAOT")
 		fake_output = discriminator(gen_image, training=True)
-		print("DALOTLAOTLAOTLAOT")
 		gen_loss = generator_loss(fake_output, label_batch)
-		print("EALOTLAOTLAOTLAOT")
 		disc_loss = discriminator_loss(real_output, fake_output)
-		print("FALOTLAOTLAOTLAOT")
 		total_loss = tf.tanh(tf.abs(gen_loss)-tf.abs(disc_loss))
-		print("GALOTLAOTLAOTLAOT")
 	gradients_of_generator = gen_tape.gradient(gen_loss, generator.trainable_variables)
 	gradients_of_discriminator = disc_tape.gradient(disc_loss, discriminator.trainable_variables)
 	gradients_of_total = total_tape.gradient(total_loss, generator.trainable_variables)
