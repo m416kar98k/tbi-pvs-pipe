@@ -14,6 +14,6 @@ for i in ${1}/*
 do
   if [ ! -d "${i}/fsout" ]
   then
-    qsubcmd --qbigmem bash ./level02_native_qitdiff-subject.sh ${i}
+    qsubcmd --qmedmem bash ./level02_native_qitdiff-subject.sh ${i}
   fi
 done
