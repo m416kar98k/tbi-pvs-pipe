@@ -1,3 +1,5 @@
+#!/usr/local/anaconda3/bin/python3
+
 #############################################################
 # Level 0 rename
 # scripts includes:
@@ -10,18 +12,17 @@
 #############################################################
 
 import os
+import sys
 import pandas as pd
 
-# cohort name
-cohort_name = input("Cohort name: ")
-modality = input("Modality name: ")
+root_path = sys.argv[1]
+cohort_name = sys.argv[2]
+modality = sys.argv[3]
 
 if modality in ("t1w", "t2w", "flair"):
 	modality_type =  "smri"
 elif modality in ("dwi"):
 	modality_type = "dmri"
-
-root_path = input("Root directory: ")
 
 # demographic tables
 csv_path = root_path + "/csv"

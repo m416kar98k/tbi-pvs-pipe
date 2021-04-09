@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="ROOT_PATH_1.Output" sink="LEVEL00_RENAME_1.ROOT_PATH" />
+                <connection source="COHORT_NAME_1.Output" sink="LEVEL00_RENAME_1.COHORT_NAME" />
+                <connection source="MODALITY_1.Output" sink="LEVEL00_RENAME_1.MODALITY" />
+                <connection source="ROOT_PATH_1.Output" sink="LEVEL01_PREPROC_1.ROOT_PATH" />
+                <connection source="LEVEL00_RENAME_1.LEVEL01_PREPROC" sink="LEVEL01_PREPROC_1.LEVEL00_RENAME" />
+                <connection source="ROOT_PATH_1.Output" sink="LEVEL02_QITDIFF_1.ROOT_PATH" />
+                <connection source="LEVEL01_PREPROC_1.LEVEL02_QITDIFF" sink="LEVEL02_QITDIFF_1.LEVEL01_PREPROC" />
+                <connection source="ROOT_PATH_1.Output" sink="LEVEL03_QITOUT_1.ROOT_PATH" />
+                <connection source="LEVEL02_QITDIFF_1.LEVEL03_QITOUT" sink="LEVEL03_QITOUT_1.LEVEL02_QITDIFF" />
+        </connections>
+        <icons>
+                <icon id="0" value="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" />
+        </icons>
+        <moduleGroup id="new_1" name="new" posX="0" posY="0" sourceCode="">
+                <dataModule id="COHORT_NAME_1" name="COHORT_NAME" posX="430" posY="35" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Apr 08 20:50:47 PDT 2021" />
+                        </metadata>
+                        <output id="COHORT_NAME_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>TRACKTBI</value>
+                        </values>
+                </dataModule>
+                <dataModule id="ROOT_PATH_1" name="ROOT_PATH" posX="216" posY="35" sourceCode="" type="String" source="true" loopIndex="false" serverAddress="cranium.loni.usc.edu">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Apr 08 20:52:24 PDT 2021" />
+                        </metadata>
+                        <output id="ROOT_PATH_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>/ifs/loni/faculty/farshid/img/shared.data/TBI/raw/TRACKTBI/diffusion_practice</value>
+                        </values>
+                </dataModule>
+                <dataModule id="MODALITY_1" name="MODALITY" posX="528" posY="102" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Apr 08 20:54:43 PDT 2021" />
+                        </metadata>
+                        <output id="MODALITY_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>dwi</value>
+                        </values>
+                </dataModule>
+                <module id="LEVEL00_RENAME_1" name="LEVEL00_RENAME" icon="0" posX="346" posY="235" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifs/loni/faculty/farshid/img/shared.data/TBI/script_practice/level00_man_rename-qsub.py" envVariables="PATH=/usr/local/anaconda3/bin/python3:$PATH">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Apr 08 21:01:39 PDT 2021" />
+                        </metadata>
+                        <input id="LEVEL00_RENAME_1.ROOT_PATH" name="ROOT_PATH" required="true" enabled="true" order="0">
+                                <format type="Directory" cardinality="1" />
+                        </input>
+                        <input id="LEVEL00_RENAME_1.COHORT_NAME" name="COHORT_NAME" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="LEVEL00_RENAME_1.MODALITY" name="MODALITY" required="true" enabled="true" order="2">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="LEVEL00_RENAME_1.LEVEL01_PREPROC" name="LEVEL01_PREPROC" required="false" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                </module>
+                <module id="LEVEL01_PREPROC_1" name="LEVEL01_PREPROC" icon="0" posX="299" posY="364" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifs/loni/faculty/farshid/img/shared.data/TBI/script_practice/level01_preproc_standardize.sh">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Apr 08 21:21:46 PDT 2021" />
+                        </metadata>
+                        <input id="LEVEL01_PREPROC_1.ROOT_PATH" name="ROOT_PATH" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="LEVEL01_PREPROC_1.LEVEL00_RENAME" name="LEVEL00_RENAME" required="true" enabled="true" order="1">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <output id="LEVEL01_PREPROC_1.LEVEL02_QITDIFF" name="LEVEL02_QITDIFF" required="false" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                </module>
+                <module id="LEVEL02_QITDIFF_1" name="LEVEL02_QITDIFF" icon="0" posX="254" posY="492" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifs/loni/faculty/farshid/img/shared.data/TBI/script_practice/level02_native_qitdiff-qsub.sh">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Apr 08 21:30:31 PDT 2021" />
+                        </metadata>
+                        <input id="LEVEL02_QITDIFF_1.ROOT_PATH" name="ROOT_PATH" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="LEVEL02_QITDIFF_1.LEVEL01_PREPROC" name="LEVEL01_PREPROC" required="true" enabled="true" order="1">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <output id="LEVEL02_QITDIFF_1.LEVEL03_QITOUT" name="LEVEL03_QITOUT" required="false" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                </module>
+                <module id="LEVEL03_QITOUT_1" name="LEVEL03_QITOUT" icon="0" posX="216" posY="609" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifs/loni/faculty/farshid/img/shared.data/TBI/script_practice/level03-qitout2table.py">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Apr 08 21:40:56 PDT 2021" />
+                        </metadata>
+                        <input id="LEVEL03_QITOUT_1.ROOT_PATH" name="ROOT_PATH" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="LEVEL03_QITOUT_1.LEVEL02_QITDIFF" name="LEVEL02_QITDIFF" required="true" enabled="true" order="1">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                </module>
+                <variables>
+                        <variable name="MMSCORE">//idaxs/project/subject/visit/assessment[@name='MMSE']/component[@name='MMSE Total Score']/assessmentScore[@attribute='MMSCORE']</variable>
+                        <variable name="source">/cxfs/four_d/DREA/HIV_serial/pipeline/lists/3DMI_long_6P_sources_9-22.list</variable>
+                        <variable name="label">21</variable>
+                        <variable name="target">/cxfs/four_d/DREA/HIV_serial/pipeline/lists/3DMI_long_6P_target_sc_9-22.list</variable>
+                        <variable name="TestCDR">//idaxs/project/subject/study/weightKg</variable>
+                        <variable name="Var 1">Value</variable>
+                        <variable name="Var sasasa2">Value</variable>
+                        <variable name="CDRSCORE">//idaxs/project/subject/visit/assessment[@name='CDR']/component[@name='CDR Total Score']/assessmentScore[@attribute='CDGLOBAL']</variable>
+                        <variable name="output_dir">/cxfs/four_d/DREA/HIV_serial/pipeline/lists/3DMI_long_6P_output_9-22.list</variable>
+                        <variable name="y">//idaxs/project/subject/study/subjectAge</variable>
+                        <variable name="SUID">//idaxs/project/subject/subjectIdentifier</variable>
+                        <variable name="Age">//idaxs/project/subject/study/subjectAge</variable>
+                        <variable name="age">//idaxs/project/subject/study/subjectAge</variable>
+                </variables>
+        </moduleGroup>
+</pipeline>
+
