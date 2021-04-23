@@ -17,8 +17,6 @@ def loss_fn(params, inputs, targets):
     preds = np.matmul(leaf, leaf_score)
     return -np.sum(nn.log_softmax(preds) * targets, axis = -1)
 
-key = PRNGKey(0)
-
 x = np.vstack([np.array(i[0]) for i in demo])
 y = np.vstack([np.array(i[1]) for i in demo])
 
