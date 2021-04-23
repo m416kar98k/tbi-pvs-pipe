@@ -1,5 +1,6 @@
 from functools import reduce
 from jax._src.api import value_and_grad
+from jax._src.tree_util import tree_map, tree_reduce
 from jax._src.numpy import lax_numpy as np
 from jax._src.nn import functions as nn
 from jax._src.random import PRNGKey, uniform
@@ -22,9 +23,7 @@ def jax_bin(x, cut_points):
 
 def loss_fn(params, inputs, targets):
     cut_points_list, leaf_score = params
-    forward_leaves = map(lambda z: jax_bin(x[:, z[0]:z[0] + 1], z[1]), enumerate(cut_points_list))
-    leaf = reduce(jax_kron_prod, forward_leaves)
-    print(type(leaf))
+    leaf = tree_reduce(jax_kron_prod, tree_map(lambda z: jax_bin(x[:, z[0]:z[0] + 1], z[1]), enumerate(cut_points_list)))
     preds = np.matmul(leaf, leaf_score)
     return -np.sum(nn.log_softmax(preds) * targets, axis = -1)
 
