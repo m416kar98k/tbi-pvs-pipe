@@ -15,7 +15,7 @@ def jax_bin(inputs, params):
 
 def loss_fn(params, inputs, targets):
     cut_points_list, leaf_score = params
-    leaf = tree_reduce(np.kron, tree_map(lambda z: jax_bin(inputs[:, z[0]:z[0] + 1], z[1]), enumerate(cut_points_list)))
+    leaf  tree_reduce(np.kron, tree_map(lambda z: jax_bin(inputs[:, z[0]:z[0] + 1], z[1]), enumerate(cut_points_list)))
     preds = np.matmul(leaf, leaf_score)
     return -np.sum(nn.log_softmax(preds) * targets, axis = -1)
 
@@ -30,7 +30,7 @@ y_dim = y.shape[1]
 
 # set params
 cut_points_list = np.array([uniform(key, [y_dim]) for i in np.ones([x_dim])])
-leaf_score = uniform(key, [np.exp2(x_dim), y_dim])
+leaf_score = uniform(key, [np.exp2(x_dim).item(), y_dim])
 params = [cut_points_list] + [leaf_score]
 step_size = 1e-3
 opt_init, opt_update, get_params = adam(step_size)
