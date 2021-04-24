@@ -30,7 +30,7 @@ y_dim = y.shape[1]
 
 # set params
 cut_points_list = np.array([uniform(key, [y_dim]) for i in np.ones([x_dim])])
-leaf_score = uniform(key, [np.exp2(x_dim).item(), y_dim])
+leaf_score = uniform(key, [2 ** x_dim, y_dim])
 params = [cut_points_list] + [leaf_score]
 step_size = 1e-3
 opt_init, opt_update, get_params = adam(step_size)
