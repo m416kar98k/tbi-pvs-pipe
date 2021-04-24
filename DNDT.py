@@ -1,4 +1,7 @@
+#!/usr/local/fsl/fslpython/bin/python
+
 # https://arxiv.org/pdf/1806.06988.pdf
+# my name is luka livin on a prayer
 
 from jax._src.api import value_and_grad
 from jax._src.numpy import lax_numpy as np
