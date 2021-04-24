@@ -1,3 +1,5 @@
+# https://arxiv.org/pdf/1806.06988.pdf
+
 from jax._src.api import value_and_grad
 from jax._src.numpy import lax_numpy as np
 from jax._src.nn import functions as nn
@@ -17,12 +19,19 @@ def loss_fn(params, inputs, targets):
     preds = np.matmul(leaf, leaf_score)
     return -np.sum(nn.log_softmax(preds) * targets, axis = -1)
 
+# set seed
+key = PRNGKey(0)
+
+# load data
 x = np.vstack([np.array(i[0]) for i in demo])
 y = np.vstack([np.array(i[1]) for i in demo])
+x_dim = x.shape[1]
+y_dim = y.shape[1]
 
-cut_points_list = np.array([uniform(PRNGKey(0), [1]) for i in np.ones([x.shape[1]])])
-leaf_score = uniform(PRNGKey(0), [np.exp2(x.shape[1]), y.shape[1]])
-params = cut_points_list, leaf_score
+# set params
+cut_points_list = np.array([uniform(key, [y_dim]) for i in np.ones([x_dim])])
+leaf_score = uniform(key, [np.exp2(x_dim), y_dim])
+params = [cut_points_list] + [leaf_score]
 step_size = 1e-3
 opt_init, opt_update, get_params = adam(step_size)
 opt_state = opt_init(params)
