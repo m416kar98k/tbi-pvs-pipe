@@ -189,6 +189,7 @@ opt_state = opt_init(cut_points_list + [leaf_score])
 num_epochs = 10
 
 for i in range(num_epochs):
-    oss, grads = value_and_grad(nn_decision_tree_cross_entropy)(feature, label, cut_points_list, leaf_score)
+    loss, grad = value_and_grad(nn_decision_tree_cross_entropy)(feature, label, cut_points_list, leaf_score)
     opt_state = opt_update(i, grads, opt_state)
     cut_points_list, leaf_score = get_params(opt_state)
+    print("epoch " + str(i) + " loss " + str(loss))
