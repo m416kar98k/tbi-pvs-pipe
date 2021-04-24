@@ -16,13 +16,10 @@ def jax_soft_binning(inputs, cut_points, temperature = 0.1):
     h = np.matmul(inputs, W) + b
     return nn.softmax(h / temperature)
 
-# cross entropy
-def jax_cross_entropy(inputs, targets, epsilon = 1e-12):
-    return -np.mean(targets * np.log(np.clip(inputs, epsilon, 1. - epsilon)))
-
-def nn_decision_tree(inputs, cut_points_list, leaf_score, temperature = 0.1):
-    leaf = reduce(np.kron, tree_map(lambda z: jax_soft_binning(inputs[:, z[0]:z[0] + 1], z[1], temperature), enumerate(cut_points_list)))
-    return np.matmul(leaf, leaf_score)
+def nn_decision_tree_cross_entropy(inputs, targets, cut_points_list, leaf_score, temperature = 0.1):
+    leaf = reduce(np.kron, map(lambda z: jax_soft_binning(inputs[:, z[0]:z[0] + 1], z[1], temperature), enumerate(cut_points_list)))
+    preds = np.matmul(leaf, leaf_score)
+    return -np.mean(targets * np.log(np.clip(preds, epsilon, 1. - epsilon)))
 
 # set seed
 key = PRNGKey(0)
@@ -34,16 +31,14 @@ x_dim = x.shape[1]
 y_dim = y.shape[1]
 
 # set params
-cut_points_list = [uniform(key, [1]) for i in np.ones([x_dim])]
+cut_points_list = [uniform(key, [1]) for i in range(x_dim)]
 leaf_score = uniform(key, [2 ** x_dim, y_dim])
-preds = nn_decision_tree(x, cut_points_list, leaf_score, temperature = 0.1)
-loss = jax_cross_entropy(preds, y)
 step_size = 1e-3
 opt_init, opt_update, get_params = adam(step_size)
 opt_state = opt_init(cut_points_list + [leaf_score])
 num_epochs = 10
 
 for i in range(num_epochs):
-    grads = grad(loss)
+    oss, grads  value_and_grad(loss_fn)(cut_points_list, leaf_score, x, y)
     opt_state = opt_update(i, grads, opt_state)
     cut_points_list, leaf_score = get_params(opt_state)
