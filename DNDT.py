@@ -19,7 +19,7 @@ def nn_decision_tree_cross_entropy(inputs, targets, cut_points_list, leaf_score,
     preds = np.matmul(leaf, leaf_score)
     return -np.mean(targets * np.log(np.clip(preds, epsilon, 1. - epsilon)))
 
-''' experimental
+''' {experimental}
 from jax._src.tree_util import tree_map, tree_reduce as map, reduce
 def nn_decision_tree_cross_entropy(inputs, targets, cut_points_list, leaf_score, temperature = 0.1, epsilon = 1e-12):
     leaf = reduce(np.kron, map(lambda z: jax_soft_binning(np.reshape(inputs[:, z], [-1, 1]), cut_points_list[z], temperature), [*range(feature_dim)]))
