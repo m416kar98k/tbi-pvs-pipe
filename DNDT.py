@@ -8,7 +8,6 @@ from jax._src.random import PRNGKey, uniform
 from jax.experimental.optimizers import adam
 from functools import reduce
 
-# soft binning
 def jax_soft_binning(inputs, cut_points, temperature = 0.1):
     D = params.shape[0]
     W = np.reshape(np.linspace(1.0, D + 1.0, D + 1), [1, -1])
@@ -39,6 +38,6 @@ opt_state = opt_init(cut_points_list + [leaf_score])
 num_epochs = 10
 
 for i in range(num_epochs):
-    oss, grads  value_and_grad(loss_fn)(cut_points_list, leaf_score, x, y)
+    oss, grads = value_and_grad(nn_decision_tree_cross_entropy)(x, y, cut_points_list, leaf_score)
     opt_state = opt_update(i, grads, opt_state)
     cut_points_list, leaf_score = get_params(opt_state)
