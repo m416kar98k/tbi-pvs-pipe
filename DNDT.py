@@ -15,7 +15,7 @@ def jax_soft_binning(inputs, cut_points, temperature = 0.1):
     h = np.matmul(inputs, W) + b
     return nn.softmax(h / temperature)
 
-def nn_decision_tree_cross_entropy(inputs, targets, cut_points_list, leaf_score, temperature = 0.1):
+def nn_decision_tree_cross_entropy(inputs, targets, cut_points_list, leaf_score, temperature = 0.1, epsilon = 1e-12):
     leaf = reduce(np.kron, map(lambda z: jax_soft_binning(inputs[:, z[0]:z[0] + 1], z[1], temperature), enumerate(cut_points_list)))
     preds = np.matmul(leaf, leaf_score)
     return -np.mean(targets * np.log(np.clip(preds, epsilon, 1. - epsilon)))
