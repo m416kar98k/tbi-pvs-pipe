@@ -9,9 +9,9 @@ from jax.experimental.optimizers import adam
 from functools import reduce
 
 def jax_soft_binning(inputs, cut_points, temperature = 0.1):
-    D = params.shape[0]
+    D = cut_points.shape[0]
     W = np.reshape(np.linspace(1.0, D + 1.0, D + 1), [1, -1])
-    b = np.cumsum(np.concatenate([np.zeros([1]), -np.sort(params)], 0),0)
+    b = np.cumsum(np.concatenate([np.zeros([1]), -np.sort(cut_points)], 0),0)
     h = np.matmul(inputs, W) + b
     return nn.softmax(h / temperature)
 
