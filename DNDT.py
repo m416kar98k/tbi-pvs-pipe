@@ -176,7 +176,7 @@ iris = [((5.1, 3.5, 1.4, 0.2), (1, 0, 0)),
         ((5.9, 3.0, 5.1, 1.8), (0, 0, 1))]
 feature = np.vstack([np.array(i[0]) for i in iris])
 label = np.vstack([np.array(i[1]) for i in iris])
-label = np.argmax(label, axis = 1)
+# label = np.argmax(label, axis = 1)
 feature_dim = feature.shape[1]
 label_dim = label.shape[1]
 
