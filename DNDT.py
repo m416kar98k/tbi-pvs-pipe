@@ -3,7 +3,7 @@
 from jax._src.api import value_and_grad
 from jax._src.numpy import lax_numpy as np
 from jax._src.nn import functions as nn
-from jax._src.random import PRNGKey, uniform
+from jax._src.random import PRNGKey, uniform, randint
 from jax.experimental.optimizers import adam
 from functools import reduce
 
@@ -185,7 +185,7 @@ feature = np.vstack([np.array(i[0]) for i in iris])
 label = np.vstack([np.array(i[1]) for i in iris])
 label = np.argmax(label, axis = 1)
 feature_dim = feature.shape[1]
-label_dim = label.shape[1]
+label_dim = 1
 cut_points_list = [uniform(key, [1]) for i in range(feature_dim)]
 leaf_score = uniform(key, [2 ** feature_dim, label_dim])
 
