@@ -1,6 +1,14 @@
 # preprocpipe
 A pipeline for repeated data preprocessing procedures for different cohorts
 
+## Recent Update
+- remove LONI Pipeline
+
+## Next Update
+- Add Longitudinal Freesurfer
+- Change QIT from JHU to Freesurfer
+- Add DeepGBM Pipeline
+
 ## Summary
 
 The contents include how to preprocess data from compressed dicom scans and csv summaries. It is a shared script directory and would **NOT** contain any PVS algorithms or original dataset which had not been public released. I would also upload a .pipe file, which is an automated graphical version for LONI Pipeline users, to preprocess their data
