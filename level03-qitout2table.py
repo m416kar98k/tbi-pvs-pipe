@@ -5,6 +5,7 @@ import pandas as pd
 df2 = []
 for subject in os.listdir(sys.argv[1]):
  for visit in os.listdir(sys.argv[1]+"/"+i+"/qitout"):
+  print("loading "+subject+"/"+visit)
   for modality in ["dkgm","dkwm","scgm"]:
     csv_path=sys.argv[1]+"/"+i+"/qitout/"+j+"/tone.region/fs."+modality+".dti.map"
     if os.path.isdir(csv_path):
