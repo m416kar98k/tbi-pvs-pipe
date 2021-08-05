@@ -1,33 +1,18 @@
-#############################################################
-# Level 3 result to table
-# scripts includes:
-# 	- qitout to csv
-
-# Quantitative Imaging Team (QI-Team)
-# INI Microstructural imaging Group (IMG)
-# Steven Neuroimaging and Informatic Institute 
-# Keck school of medicine of USC
-#############################################################
-
+#!/usr/bin/env python
+import sys
 import os
 import pandas as pd
-
-# output
-analysisF = input("Analysis directory: ")
-statF = input("Statistics directory: ")
-
 df2 = []
-
-subj_list = os.listdir(analysisF)
-for i in subj_list:
-	csv_path = analysisF + "/" + i + "/" + "qitout" + "/" + "diff.region" + "/" + "jhu.labels.dti.map"
-	if os.path.isdir(csv_path):
-		column_names = []
-		column_values = [i]
-		for j in os.listdir(csv_path):
-			temp = pd.read_csv(csv_path + "/" + j)
-			column_names += [j.replace(".csv", "") + "_" + k for k in temp["name"]]
-			column_values += list(temp["value"])
-		df2.append(column_values)
-
-pd.DataFrame(df2, columns = ["Subject"] + column_names).to_csv(statF + "/" + "qitout.all.csv")
+for subject in os.listdir(sys.argv[1]):
+ for visit in os.listdir(sys.argv[1]+"/"+i+"/qitout"):
+  for modality in ["dkgm","dkwm","scgm"]:
+    csv_path=sys.argv[1]+"/"+i+"/qitout/"+j+"/tone.region/fs."+modality+".dti.map"
+    if os.path.isdir(csv_path):
+     column_names = []
+     column_values = [i]
+     for j in os.listdir(csv_path):
+      temp=pd.read_csv(csv_path+"/"+j)
+      column_names=[modality+"_"+j.replace(".csv", "")+"_"+k for k in temp["name"]]
+      column_values+=list(temp["value"])
+      df2.append(column_values)
+pd.DataFrame(df2,columns=["Subject"]+column_names).to_csv(sys.argv[2]+"/qitout.all.csv",index=False)
