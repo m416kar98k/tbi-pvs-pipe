@@ -35,4 +35,4 @@ If you are preprocessing diffusion data:
 1. run ```python level00_man_rename-qsub.py ${ROOT_FOLDER} TRACKTBI dwi```
 2. run ```bash level01_preproc-standardize.sh ${ROOT_FOLDER}```
 3. run ```bash level02_native_qitdiff-qsub.sh ${ROOT_FOLDER}```
-4. run ```bash level03_qitout2table.py ${ROOT_FOLDER}```
+4. run ```bash level03_qitdiff2table.py ${ROOT_FOLDER} ${STATS}```
