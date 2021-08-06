@@ -4,11 +4,10 @@
 ![mmexport1627849541133](https://user-images.githubusercontent.com/70918897/128453629-2f1fc00d-bef2-4b22-9bff-111856d15457.jpg)
 
 ## Recent Update
-- remove LONI Pipeline
+- Change QIT from JHU to Freesurfer
 
 ## Next Update
 - Add Longitudinal Freesurfer
-- Change QIT from JHU to Freesurfer
 - Add DeepGBM Pipeline
 
 ## Installation Requirement
