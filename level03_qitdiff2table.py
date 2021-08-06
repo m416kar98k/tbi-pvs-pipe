@@ -8,7 +8,7 @@ for subject in sorted(os.listdir(sys.argv[1])):
   print("loading "+subject+"/"+visit)
   column_names=[]
   column_values=[subject,visit]
-  for modality in ["ccwm","dkgm","dkwm","scgm"]:
+  for modality in ["ccwm","dkbm","dkgm","dkwm","lbbm","lbgm","lbwm","scgm","wbbm"]:
     csv_path=sys.argv[1]+"/"+subject+"/qitout/"+visit+"/tone.region/fs."+modality+".dti.map"
     if os.path.isdir(csv_path):
      for j in sorted(os.listdir(csv_path)):
