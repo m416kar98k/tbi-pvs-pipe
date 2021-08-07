@@ -8,9 +8,9 @@ for subject in sorted(os.listdir(sys.argv[1])):
   print("loading "+subject+"/"+visit)
   column_names=[]
   column_values=[subject,visit]
-  if os.path.isdir(sys.argv[1]+"/"+subject+"/qitout/"+visit+"/tone.fs.region"):
-   for j in sorted(os.listdir(sys.argv[1]+"/"+subject+"/qitout/"+visit+"/tone.fs.region")):
-    temp=pd.read_csv(sys.argv[1]+"/"+subject+"/qitout/"+visit+"/tone.fs.region/"+j)
+  if os.path.isdir(sys.argv[1]+"/"+subject+"/qitout/"+visit+"/tone.fs.map"):
+   for j in sorted(os.listdir(sys.argv[1]+"/"+subject+"/qitout/"+visit+"/tone.fs.map")):
+    temp=pd.read_csv(sys.argv[1]+"/"+subject+"/qitout/"+visit+"/tone.fs.map/"+j)
     column_names+=["_"+j.replace(".csv", "").replace(".","_")+"_"+k for k in temp["name"]]
     column_values+=list(temp["value"])
   for region in ["ccwm","dkbm","dkgm","dkwm","lbbm","lbgm","lbwm","scgm","wbbm"]:
