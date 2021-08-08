@@ -2,6 +2,7 @@
 import sys
 import os
 import pandas as pd
+from utils.qfsmeas import column_names
 df2 = []
 for subject in sorted(os.listdir(sys.argv[1])):
  for visit in sorted(os.listdir(sys.argv[1]+"/"+subject+"/qitout")):
@@ -20,4 +21,4 @@ for subject in sorted(os.listdir(sys.argv[1])):
      column_names+=[region+"_"+j.replace(".csv", "")+"_"+k for k in temp["name"]]
      column_values+=list(temp["value"])
   df2.append(column_values)
-pd.DataFrame(df2,columns=["Subject","Visit"]+column_names).to_csv(sys.argv[2],index=False)
+pd.DataFrame(df2,columns=column_names).to_csv(sys.argv[2],index=False)
